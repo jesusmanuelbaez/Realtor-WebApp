@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,30 +129,134 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\smart_wizard.css" />
-    <Content Include="Content\smart_wizard.min.css" />
-    <Content Include="Content\smart_wizard_all.css" />
-    <Content Include="Content\smart_wizard_all.min.css" />
-    <Content Include="Content\smart_wizard_arrows.css" />
-    <Content Include="Content\smart_wizard_arrows.min.css" />
-    <Content Include="Content\smart_wizard_dots.css" />
-    <Content Include="Content\smart_wizard_dots.min.css" />
-    <Content Include="Content\smart_wizard_round.css" />
-    <Content Include="Content\smart_wizard_round.min.css" />
-    <Content Include="Content\smart_wizard_square.css" />
-    <Content Include="Content\smart_wizard_square.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
+    <Content Include="Content\fonts.css" />
+    <Content Include="Content\Fonts\fl-bigmug-line.eot" />
+    <Content Include="Content\Fonts\fl-bigmug-line.svg" />
+    <Content Include="Content\Fonts\fl-bigmug-line.ttf" />
+    <Content Include="Content\Fonts\fl-bigmug-line.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Fonts\lg.eot" />
+    <Content Include="Content\Fonts\lg.svg" />
+    <Content Include="Content\Fonts\lg.ttf" />
+    <Content Include="Content\Fonts\lg.woff" />
+    <Content Include="Content\Fonts\Linearicons.eot" />
+    <Content Include="Content\Fonts\Linearicons.svg" />
+    <Content Include="Content\Fonts\Linearicons.ttf" />
+    <Content Include="Content\Fonts\Linearicons.woff" />
+    <Content Include="Content\Fonts\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Content\Fonts\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\Fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\Fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\Fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\Fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\Fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\Fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Content\Fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Content\Fonts\Montserrat\OFL.txt" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\bg-1-1920-455.jpg" />
+    <Content Include="Content\Images\bg-pattern-boxed.png" />
+    <Content Include="Content\Images\breadcrumbs-image-1.jpg" />
+    <Content Include="Content\Images\careers-1-570x388.jpg" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\footer-gallery-1-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-2-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-3-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-4-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-5-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-6-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-7-85x85.jpg" />
+    <Content Include="Content\Images\footer-gallery-8-85x85.jpg" />
+    <Content Include="Content\Images\gallery-original-1.jpg" />
+    <Content Include="Content\Images\gallery-original-2.jpg" />
+    <Content Include="Content\Images\gallery-original-3.jpg" />
+    <Content Include="Content\Images\gallery-original-4.jpg" />
+    <Content Include="Content\Images\gallery-original-5.jpg" />
+    <Content Include="Content\Images\gallery-original-6.jpg" />
+    <Content Include="Content\Images\gallery-original-7.jpg" />
+    <Content Include="Content\Images\gallery-original-8.jpg" />
+    <Content Include="Content\Images\gmap_marker.png" />
+    <Content Include="Content\Images\grid-blog-1-571x353.jpg" />
+    <Content Include="Content\Images\grid-blog-2-571x353.jpg" />
+    <Content Include="Content\Images\grid-blog-3-571x353.jpg" />
+    <Content Include="Content\Images\grid-blog-4-571x353.jpg" />
+    <Content Include="Content\Images\ie8-panel\warning_bar_0000_us.jpg" />
+    <Content Include="Content\Images\intense_02.jpg" />
+    <Content Include="Content\Images\intense_big_02.jpg" />
+    <Content Include="Content\Images\isotope-loader.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\logo-default-151x44.png" />
+    <Content Include="Content\Images\logo-light-115x34.png" />
+    <Content Include="Content\Images\preloader.gif" />
+    <Content Include="Content\Images\preloader.png" />
+    <Content Include="Content\Images\sam\IMG_9286.jpg" />
+    <Content Include="Content\Images\sam\IMG_9326.jpg" />
+    <Content Include="Content\Images\sam\IMG_9342.jpg" />
+    <Content Include="Content\Images\sam\IMG_9375.jpg" />
+    <Content Include="Content\Images\sam\IMG_9394.jpg" />
+    <Content Include="Content\Images\service-thumbnail-1-270x300.jpg" />
+    <Content Include="Content\Images\service-thumbnail-2-270x300.jpg" />
+    <Content Include="Content\Images\service-thumbnail-3-270x300.jpg" />
+    <Content Include="Content\Images\service-thumbnail-4-270x300.jpg" />
+    <Content Include="Content\Images\slider-minimal-slide-1-1920x968.jpg" />
+    <Content Include="Content\Images\slider-minimal-slide-2-1920x968.jpg" />
+    <Content Include="Content\Images\slider-minimal-slide-3-1920x968.jpg" />
+    <Content Include="Content\Images\team-1-270x273.jpg" />
+    <Content Include="Content\Images\team-2-270x273.jpg" />
+    <Content Include="Content\Images\team-3-270x273.jpg" />
+    <Content Include="Content\Images\team-4-270x273.jpg" />
+    <Content Include="Content\Images\testimonials-person-1-96x96.jpg" />
+    <Content Include="Content\Images\testimonials-person-2-96x96.jpg" />
+    <Content Include="Content\Images\testimonials-person-3-96x96.jpg" />
+    <Content Include="Content\Images\testimonials-person-4-96x96.jpg" />
+    <Content Include="Content\Images\testimonials-person-5-96x96.jpg" />
+    <Content Include="Content\Images\testimonials-person-6-96x96.jpg" />
+    <Content Include="Content\Images\typography-1-770x456.jpg" />
+    <Content Include="Content\Images\typography-2-770x456.jpg" />
+    <Content Include="Content\Images\typography-3-770x456.jpg" />
+    <Content Include="Content\Images\video-play.png" />
+    <Content Include="Content\Images\vimeo-play.png" />
+    <Content Include="Content\Images\wizard-v10-bg.jpg" />
+    <Content Include="Content\Images\youtube-play.png" />
+    <Content Include="Content\montserrat-font.css" />
     <Content Include="Content\scss\core\_base.scss" />
     <Content Include="Content\scss\core\_root.scss" />
     <Content Include="Content\scss\core\_variables.scss" />
@@ -165,8 +271,38 @@
     <Content Include="Content\scss\themes\_dots.scss" />
     <Content Include="Content\scss\themes\_round.scss" />
     <Content Include="Content\scss\themes\_square.scss" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\smart_wizard.css" />
+    <Content Include="Content\smart_wizard.min.css" />
+    <Content Include="Content\smart_wizard_all.css" />
+    <Content Include="Content\smart_wizard_all.min.css" />
+    <Content Include="Content\smart_wizard_arrows.css" />
+    <Content Include="Content\smart_wizard_arrows.min.css" />
+    <Content Include="Content\smart_wizard_dots.css" />
+    <Content Include="Content\smart_wizard_dots.min.css" />
+    <Content Include="Content\smart_wizard_round.css" />
+    <Content Include="Content\smart_wizard_round.min.css" />
+    <Content Include="Content\smart_wizard_square.css" />
+    <Content Include="Content\smart_wizard_square.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\core.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
@@ -179,7 +315,26 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -197,22 +352,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\img-sources\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
