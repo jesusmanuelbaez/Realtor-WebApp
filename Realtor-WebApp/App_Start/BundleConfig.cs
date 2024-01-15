@@ -21,14 +21,17 @@ namespace Realtor_WebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/popper.min.js",
                       "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/core.min.js",
-                      "~/Scripts/script.js"));
+                      "~/Script/holder.min.js"
+                      //"~/Scripts/script.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
-                      "~/Content/site.css",
-                       "~/Content/fonts.css",
+                      "~/Content/carousel.css",
+                      //"~/Content/site.css",
+                       //"~/Content/fonts.css",
                       "~/Content/smart_wizard.min.css",
                        "~/Content/smart_wizard_all.min.css",
                       "~/Content/smart_wizard_theme_dots.min.css",

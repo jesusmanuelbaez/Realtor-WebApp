@@ -141,6 +141,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\carousel.css" />
     <Content Include="Content\fonts.css" />
     <Content Include="Content\Fonts\fl-bigmug-line.eot" />
     <Content Include="Content\Fonts\fl-bigmug-line.svg" />
@@ -303,6 +304,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
